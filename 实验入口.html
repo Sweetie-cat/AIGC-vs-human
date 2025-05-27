@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>虚假信息传播研究 - 山东大学</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="overlay"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <img src="https://www.sdu.edu.cn/images/logo.png" alt="山东大学logo" class="logo">
+        </header>
+        
+        <div class="content-card">
+            <div class="consent-section" id="consentSection">
+                <h1>研究参与知情同意书</h1>
+                <div class="consent-content">
+                    <p>尊敬的参与者：</p>
+                    <p>欢迎参与由山东大学开展的"虚假信息传播研究"。本研究旨在了解不同来源和评论性质的虚假信息对人们信任倾向的影响。</p>
+                    <p><strong>研究流程：</strong>您将参与一个约15-20分钟的在线实验，包括阅读虚假信息和评论，并回答相关问题。</p>
+                    <p><strong>数据保护：</strong>我们将对您的数据进行匿名处理，仅用于学术研究目的。</p>
+                    <p><strong>自愿参与：</strong>您可以随时退出实验，不会有任何负面影响。</p>
+                    <p>如有问题，请联系：202300210077@mail.sdu.edu.cn</p>
+                </div>
+                <button id="agreeButton" class="primary-button">我已阅读并同意参与研究</button>
+            </div>
+
+            <div class="group-selection-screen" id="groupSelectionScreen" style="display: none;">
+                <h1>选择实验组别</h1>
+                <p>请选择您要参与的实验组别：</p>
+                <div class="group-buttons">
+                    <button class="group-button" data-group="group1">第一组</button>
+                    <button class="group-button" data-group="group2">第二组</button>
+                    <button class="group-button" data-group="group3">第三组</button>
+                    <button class="group-button" data-group="group4">第四组</button>
+                </div>
+            </div>
+
+            <div class="pre-test-emotion-screen" id="preTestEmotionScreen" style="display: none;">
+                <h1>情绪前测</h1>
+                <p>在开始正式实验之前，请根据您当前的情绪状态完成以下评估：</p>
+                <div class="assessment-section">
+                    <h3>当前情绪状态评估</h3>
+                    <div class="emotion-scale">
+                        <div class="scale-item">
+                            <label>愤怒</label>
+                            <div class="rating">
+                                <input type="radio" name="pre_anger" value="1" id="pre_anger1"><label for="pre_anger1">1</label>
+                                <input type="radio" name="pre_anger" value="2" id="pre_anger2"><label for="pre_anger2">2</label>
+                                <input type="radio" name="pre_anger" value="3" id="pre_anger3"><label for="pre_anger3">3</label>
+                                <input type="radio" name="pre_anger" value="4" id="pre_anger4"><label for="pre_anger4">4</label>
+                                <input type="radio" name="pre_anger" value="5" id="pre_anger5"><label for="pre_anger5">5</label>
+                            </div>
+                        </div>
+                        <div class="scale-item">
+                            <label>恐惧</label>
+                            <div class="rating">
+                                <input type="radio" name="pre_fear" value="1" id="pre_fear1"><label for="pre_fear1">1</label>
+                                <input type="radio" name="pre_fear" value="2" id="pre_fear2"><label for="pre_fear2">2</label>
+                                <input type="radio" name="pre_fear" value="3" id="pre_fear3"><label for="pre_fear3">3</label>
+                                <input type="radio" name="pre_fear" value="4" id="pre_fear4"><label for="pre_fear4">4</label>
+                                <input type="radio" name="pre_fear" value="5" id="pre_fear5"><label for="pre_fear5">5</label>
+                            </div>
+                        </div>
+                        <div class="scale-item">
+                            <label>困惑</label>
+                            <div class="rating">
+                                <input type="radio" name="pre_confusion" value="1" id="pre_confusion1"><label for="pre_confusion1">1</label>
+                                <input type="radio" name="pre_confusion" value="2" id="pre_confusion2"><label for="pre_confusion2">2</label>
+                                <input type="radio" name="pre_confusion" value="3" id="pre_confusion3"><label for="pre_confusion3">3</label>
+                                <input type="radio" name="pre_confusion" value="4" id="pre_confusion4"><label for="pre_confusion4">4</label>
+                                <input type="radio" name="pre_confusion" value="5" id="pre_confusion5"><label for="pre_confusion5">5</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="completePreTestButton" class="primary-button">完成前测并继续</button>
+            </div>
+
+            <div class="welcome-screen" id="welcomeScreen" style="display: none;">
+                <h1>欢迎参加社会信息传播实验</h1>
+                <div class="role-play-instruction">
+                    <div class="instruction-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="instruction-content">
+                        <p><strong>请想象：</strong>您是山东大学的一名在校学生，正在浏览校园社交媒体和新闻平台。请您像平时浏览信息一样，认真阅读以下内容，并根据您的第一感受进行评价。</p>
+                    </div>
+                </div>
+                <p>实验流程：</p>
+                <ol>
+                    <li>阅读一系列校园信息及其评论</li>
+                    <li>完成情绪状态评估</li>
+                    <li>回答行为倾向相关问题</li>
+                </ol>
+                <p>实验预计用时约20分钟。您的参与对研究非常重要，请认真完成每个环节。</p>
+                <button id="startButton" class="primary-button">开始实验</button>
+            </div>
+
+            <div class="experiment-screen" id="experimentScreen" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress" id="progressBar"></div>
+                </div>
+                
+                <div class="content-container">
+                    <!-- 社交媒体模拟界面 -->
+                    <div class="social-media-container" id="socialMediaContainer">
+                        <div class="platform-header">
+                            <div class="platform-info">
+                                <div class="platform-icon" id="platformIcon"><i class="fab fa-weixin"></i></div>
+                                <div class="platform-name" id="platformName">山大校内事</div>
+                            </div>
+                            <div class="post-time" id="postTime">5分钟前</div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <h2 class="post-title" id="newsTitle"></h2>
+                            <div class="post-text" id="newsContent"></div>
+                            <div class="post-media" id="postMedia">
+                                <!-- 媒体内容将通过JS动态插入 -->
+                            </div>
+                            <div class="post-stats">
+                                <span><i class="far fa-eye"></i> <span id="viewCount">238</span>次浏览</span>
+                                <span><i class="far fa-thumbs-up"></i> <span id="likeCount">45</span></span>
+                                <span><i class="far fa-comment"></i> <span id="commentCount">12</span></span>
+                                <span><i class="fas fa-share"></i> <span id="shareCount">8</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="comments-container">
+                            <div class="comment-header">
+                                <i class="far fa-comment"></i> 热门评论
+                            </div>
+                            <div class="comment-item" id="commentSection">
+                                <!-- 评论内容将通过JS动态插入 -->
+                            </div>
+                            <div class="more-comments">
+                                <span>查看更多评论...</span>
+                            </div>
+                        </div>
+                        
+                        <div class="source-info" id="sourceInfo">
+                            <!-- 信息来源将通过JS动态插入 -->
+                        </div>
+                    </div>
+
+                    <div class="assessment-section">
+                        <h3>情绪状态评估</h3>
+                        <div class="emotion-scale">
+                            <p>请评估您阅读这条信息后的情绪状态：</p>
+                            <div class="scale-item">
+                                <label>愤怒</label>
+                                <div class="rating">
+                                    <input type="radio" name="anger" value="1" id="anger1">
+                                    <label for="anger1">1</label>
+                                    <input type="radio" name="anger" value="2" id="anger2">
+                                    <label for="anger2">2</label>
+                                    <input type="radio" name="anger" value="3" id="anger3">
+                                    <label for="anger3">3</label>
+                                    <input type="radio" name="anger" value="4" id="anger4">
+                                    <label for="anger4">4</label>
+                                    <input type="radio" name="anger" value="5" id="anger5">
+                                    <label for="anger5">5</label>
+                                </div>
+                            </div>
+                            <div class="scale-item">
+                                <label>恐惧</label>
+                                <div class="rating">
+                                    <input type="radio" name="fear" value="1" id="fear1">
+                                    <label for="fear1">1</label>
+                                    <input type="radio" name="fear" value="2" id="fear2">
+                                    <label for="fear2">2</label>
+                                    <input type="radio" name="fear" value="3" id="fear3">
+                                    <label for="fear3">3</label>
+                                    <input type="radio" name="fear" value="4" id="fear4">
+                                    <label for="fear4">4</label>
+                                    <input type="radio" name="fear" value="5" id="fear5">
+                                    <label for="fear5">5</label>
+                                </div>
+                            </div>
+                            <div class="scale-item">
+                                <label>困惑</label>
+                                <div class="rating">
+                                    <input type="radio" name="confusion" value="1" id="confusion1">
+                                    <label for="confusion1">1</label>
+                                    <input type="radio" name="confusion" value="2" id="confusion2">
+                                    <label for="confusion2">2</label>
+                                    <input type="radio" name="confusion" value="3" id="confusion3">
+                                    <label for="confusion3">3</label>
+                                    <input type="radio" name="confusion" value="4" id="confusion4">
+                                    <label for="confusion4">4</label>
+                                    <input type="radio" name="confusion" value="5" id="confusion5">
+                                    <label for="confusion5">5</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>行为倾向评估</h3>
+                        <div class="behavior-scale">
+                            <div class="scale-item">
+                                <label>您有多大可能去核实这则信息的真实性？</label>
+                                <div class="rating">
+                                    <input type="radio" name="verify" value="1" id="verify1">
+                                    <label for="verify1">1</label>
+                                    <input type="radio" name="verify" value="2" id="verify2">
+                                    <label for="verify2">2</label>
+                                    <input type="radio" name="verify" value="3" id="verify3">
+                                    <label for="verify3">3</label>
+                                    <input type="radio" name="verify" value="4" id="verify4">
+                                    <label for="verify4">4</label>
+                                    <input type="radio" name="verify" value="5" id="verify5">
+                                    <label for="verify5">5</label>
+                                </div>
+                            </div>
+                            <div class="scale-item">
+                                <label>您有多大可能将这则信息分享给他人？</label>
+                                <div class="rating">
+                                    <input type="radio" name="share" value="1" id="share1">
+                                    <label for="share1">1</label>
+                                    <input type="radio" name="share" value="2" id="share2">
+                                    <label for="share2">2</label>
+                                    <input type="radio" name="share" value="3" id="share3">
+                                    <label for="share3">3</label>
+                                    <input type="radio" name="share" value="4" id="share4">
+                                    <label for="share4">4</label>
+                                    <input type="radio" name="share" value="5" id="share5">
+                                    <label for="share5">5</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="nextButton" class="primary-button">下一条信息</button>
+            </div>
+
+            <div class="completion-screen" id="completionScreen" style="display: none;">
+                <h1>感谢您的参与！</h1>
+                <p>您的反馈对我们非常重要。</p>
+                
+                <div class="support-section">
+                    <h2><i class="fas fa-phone-alt"></i> 疑问与支持</h2>
+                    <p>如果您在参与实验后感到任何不适，或对实验内容有任何疑问，请随时与我们联系。我们非常乐意为您提供帮助和支持。</p>
+                    
+                    <div class="contact-card">
+                        <h3>联系信息</h3>
+                        <ul>
+                            <li><strong>项目负责人：</strong> 李翔</li>
+                            <li><strong>电子邮箱：</strong> 202300210077@mail.sdu.edu.cn</li>
+                            <li><strong>联系电话：</strong> 15660802707</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <footer>
+                    <p>再次感谢您的宝贵时间与支持！</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
